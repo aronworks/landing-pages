@@ -82,8 +82,7 @@ export default function Home() {
               </template>
             </div> */}
           </form>
-          <div className="space" />
-          <div className="hero-img-wrap">
+          <div className="hero-img-wrap ">
             <amp-img
               width="865"
               height="466"
@@ -94,9 +93,9 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <div className="space" />
-      <section className="container">
-        <div className="flex justify-space-between align-center px-32">
+
+      <section className="container section-space">
+        <div className="flex justify-space-between px-32 md-px-0">
           <div className="flex-item-three">
             <svg height={70} viewBox="0 0 512 512" width={70}>
               <path d="M201.058 120.775v-11.999a7.5 7.5 0 00-15 0v11.999a7.5 7.5 0 0015 0zM325.943 120.775v-11.999a7.5 7.5 0 00-15 0v11.999a7.5 7.5 0 0015 0zM256.001 135.418a29.332 29.332 0 0022.116-10.072 7.5 7.5 0 00-11.308-9.856c-2.729 3.132-6.669 4.928-10.809 4.928s-8.08-1.796-10.809-4.928a7.501 7.501 0 00-11.309 9.856 29.34 29.34 0 0022.119 10.072z" />
@@ -140,53 +139,61 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="space">
-        <div className="container tech-wrap flex justify-space-between">
+      <section className="section-space">
+        <div className="container tech-wrap flex justify-space-evenly">
           <amp-img
             width="105"
             height="40"
             src="/assets/images/tech1.png"
             alt="Tech1 Image"
+            className="tech-logo"
           />
           <amp-img
             width="105"
             height="40"
             src="/assets/images/tech2.png"
             alt="Tech1 Image"
+            className="tech-logo"
           />
           <amp-img
             width="105"
             height="40"
             src="/assets/images/tech3.png"
             alt="Tech1 Image"
+            className="tech-logo"
           />
           <amp-img
             width="105"
             height="40"
             src="/assets/images/tech4.png"
             alt="Tech1 Image"
+            className="tech-logo"
           />
           <amp-img
             width="105"
             height="40"
             src="/assets/images/tech5.png"
             alt="Tech1 Image"
+            className="tech-logo"
           />
           <amp-img
             width="105"
             height="40"
             src="/assets/images/tech6.png"
             alt="Tech1 Image"
+            className="tech-logo"
           />
           <amp-img
             width="105"
             height="40"
             src="/assets/images/tech7.png"
             alt="Tech1 Image"
+            className="tech-logo"
           />
         </div>
       </section>
-      <section className="container">
+
+      <section className="container section-space">
         <div className="cta-wrapper">
           <h3 className="cta-title">Let’s get started!</h3>
           <p className="cta-desc desc">
@@ -199,12 +206,9 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="space" />
-
       <style jsx>{`
         * {
           box-sizing: border-box;
-          font-size: 16px;
           font-family: "Lato", sans-serif;
         }
 
@@ -213,13 +217,16 @@ export default function Home() {
           max-width: 1008px;
           margin: 0 auto;
         }
+
+        .section-space {
+          margin-top: 100px;
+        }
         .px-32 {
           padding: 0px 32px;
         }
 
-        .space {
-          margin: 100px 0px;
-          display: block;
+        .mt-20 {
+          margin-top: 40px;
         }
 
         .flex {
@@ -229,6 +236,10 @@ export default function Home() {
 
         .justify-space-between {
           justify-content: space-between;
+        }
+
+        .justify-space-evenly {
+          justify-content: space-evenly;
         }
 
         .align-center {
@@ -243,6 +254,7 @@ export default function Home() {
         .desc {
           color: #6b7177;
           line-height: 1.5;
+          font-size: 1rem;
         }
 
         .title {
@@ -313,7 +325,6 @@ export default function Home() {
 
         .hero-section {
           background-image: url(/assets/images/bg.svg);
-          // background-color: #fb9d12;
           background-repeat: no-repeat;
           background-position: top center;
           background-size: cover;
@@ -324,12 +335,11 @@ export default function Home() {
         }
         .hero-img-wrap {
           max-width: 865px;
-          margin: 0 auto;
+          margin: 40px auto;
         }
 
         .flex-item-three {
           width: 30%;
-          font-size: 1.2rem;
         }
 
         .tech-wrap {
@@ -340,6 +350,7 @@ export default function Home() {
 
         .cta-wrapper {
           text-align: center;
+          margin-bottom: 100px;
         }
 
         .cta-title {
@@ -364,7 +375,7 @@ export default function Home() {
           cursor: pointer;
           border: 1px solid transparent;
           padding: 0.75rem 1.5625rem;
-          font-size: 1 rem;
+          font-size: 1rem;
           line-height: 1.88;
           border-radius: 8px;
           min-width: 175px;
@@ -381,14 +392,24 @@ export default function Home() {
           background-color: #fb9d12;
           border-color: #fb9806;
         }
+        .tech-logo {
+          margin  15px;
+        }
       `}</style>
 
       <style jsx>
         {`
-          @media only screen and (max-width: 768px) {
+          @media only screen and (max-width: 1024px) {
             .container {
-              width: 85%;
+              width: 90%;
             }
+          }
+        `}
+      </style>
+
+      <style jsx>
+        {`
+          @media only screen and (max-width: 768px) {
             h1 {
               font-size: 1.8rem;
               margin-top: 2rem;
@@ -403,7 +424,30 @@ export default function Home() {
               padding: 0.8rem 1.3rem;
             }
             .hero-img-wrap {
-              width: 60%;
+              width: 70%;
+            }
+            .title {
+              font-size: 1rem;
+            }
+            .md-px-0 {
+              padding: 0;
+            }
+            .tech-wrap {
+              margin-top: 40px;
+            }
+          }
+        `}
+      </style>
+
+      <style jsx>
+        {`
+          @media only screen and (max-width: 700px) {
+            input {
+              margin: 5px auto;
+              width: 70%;
+            }
+            .section-space {
+              margin-top: 70px;
             }
           }
         `}
@@ -413,9 +457,11 @@ export default function Home() {
         {`
           @media only screen and (max-width: 500px) {
             .container {
-              width: 95%;
+              width: 90%;
             }
-
+            .section-space {
+              margin-top: 50px;
+            }
             input {
               margin: 5px auto;
               width: 90%;
@@ -436,20 +482,21 @@ export default function Home() {
             .hero-img-wrap {
               width: 95%;
             }
-          }
-          @media only screen and (max-width: 768px) {
-            h1 {
-              font-size: 1.75rem;
-              margin-top: 2.2rem;
+
+            .flex-item-three {
+              width: 100%;
+              margin-bottom: 20px;
             }
-            h2 {
-              font-size: 1.5rem;
-              width: 90%;
-              margin: 20px auto;
+            .tech-logo {
+              margin  15px 7px;
             }
-            input {
-              font-size: 0.9rem;
+
+            .cta-title {
+              font-size: 2rem;
             }
+
+            .cta-desc {
+              width: 80%;
           }
         `}
       </style>
